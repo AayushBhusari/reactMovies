@@ -14,6 +14,7 @@ const Home = () => {
       }
       const resu = await result.json();
       const res = resu.results;
+      console.log(res);
       setMovies(res);
     } catch (error) {
       console.error("Error fetching data:", error);
