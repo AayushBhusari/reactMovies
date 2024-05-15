@@ -6,8 +6,6 @@ const MovieCard = ({
   title,
   overview,
   release_date,
-  tagline,
-  id,
   genres,
   vote_average,
   vote_count,
@@ -34,13 +32,9 @@ const MovieCard = ({
           <p className="text-gray-400 mb-2">
             <span className="font-bold">Release Date:</span> {release_date}
           </p>
-          {/* Tagline */}
-          <p className="text-gray-400 mb-2">
-            <span className="font-bold">Tagline:</span> {tagline}
-          </p>
           {/* ID */}
           <p className="text-gray-400 mb-2">
-            <span className="font-bold">ID:</span> {id}
+            <span className="font-bold">ID:</span> {movieID}
           </p>
 
           {/* Genres */}
