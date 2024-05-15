@@ -70,7 +70,6 @@ MovieCard.propTypes = {
   title: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
   release_date: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
   genres: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

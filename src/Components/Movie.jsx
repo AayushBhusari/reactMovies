@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 
 const Movie = () => {
@@ -85,11 +84,6 @@ const Movie = () => {
       </div>
     </div>
   );
-};
-
-// PropTypes
-Movie.propTypes = {
-  movieId: PropTypes.number.isRequired,
 };
 
 export default Movie;
