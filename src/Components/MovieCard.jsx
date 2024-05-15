@@ -6,14 +6,16 @@ const MovieCard = ({
   title,
   overview,
   release_date,
+  tagline,
+  id,
   genres,
   vote_average,
   vote_count,
   movieID,
 }) => {
   return (
-    <Link to={`/movie/${movieID}`}>
-      <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-3">
+    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-3">
+      <Link to={`/movie/${movieID}`}>
         {/* Movie Poster */}
         <div className="flex justify-center items-center mb-4">
           <img
@@ -32,9 +34,13 @@ const MovieCard = ({
           <p className="text-gray-400 mb-2">
             <span className="font-bold">Release Date:</span> {release_date}
           </p>
+          {/* Tagline */}
+          <p className="text-gray-400 mb-2">
+            <span className="font-bold">Tagline:</span> {tagline}
+          </p>
           {/* ID */}
           <p className="text-gray-400 mb-2">
-            <span className="font-bold">ID:</span> {movieID}
+            <span className="font-bold">ID:</span> {id}
           </p>
 
           {/* Genres */}
@@ -59,8 +65,8 @@ const MovieCard = ({
             <span className="font-bold">Vote Count:</span> {vote_count}
           </p>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
@@ -70,6 +76,7 @@ MovieCard.propTypes = {
   title: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
   release_date: PropTypes.string.isRequired,
+  tagline: PropTypes.string,
   id: PropTypes.number.isRequired,
   genres: PropTypes.arrayOf(
     PropTypes.shape({
