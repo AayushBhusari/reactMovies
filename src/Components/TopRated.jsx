@@ -14,7 +14,6 @@ const TopRated = () => {
       }
       const resu = await result.json();
       const res = resu.results;
-      console.log(res);
       setMovies(res);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -27,7 +26,7 @@ const TopRated = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl mb-5 text-center">Latest</h1>
+      <h1 className="text-4xl mb-5 text-center">Top Rated Movies</h1>
       <div className="grid grid-cols-4 gap-2">
         {movies.map((movie, i) => (
           <MovieCard
@@ -37,7 +36,7 @@ const TopRated = () => {
             overview={movie.overview}
             release_date={movie.release_date}
             tagline={movie.tagline}
-            id={movie.id}
+            movieID={movie.id}
             genres={movie.genres}
             vote_average={movie.vote_average}
             vote_count={movie.vote_count}

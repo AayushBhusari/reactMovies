@@ -8,9 +8,9 @@ const NotFound = () => {
           <br />
           <h2>Page Not Found</h2>
           <br />
-          <a className="">
+          <button className="p-4 bg-blue-600 rounded-xl hover:bg-blue-800">
             <Link to={"/"}>Go to home page</Link>
-          </a>
+          </button>
         </div>
       </div>
     </>

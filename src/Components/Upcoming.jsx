@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
 
-const Home = () => {
+const Upcoming = () => {
   const [movies, setMovies] = useState([]);
 
   const getData = async () => {
     try {
       const result = await fetch(
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=3ea3884935c602b89781523e7db96dc7"
+        "https://api.themoviedb.org/3/movie/upcoming?api_key=3ea3884935c602b89781523e7db96dc7"
       );
       if (!result.ok) {
         throw new Error("Failed to fetch data");
       }
       const resu = await result.json();
       const res = resu.results;
-      console.log(res);
       setMovies(res);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -27,7 +26,7 @@ const Home = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl mb-5 text-center">Latest</h1>
+      <h1 className="text-4xl mb-5 text-center">Upcoming Movies</h1>
       <div className="grid grid-cols-4 gap-2">
         {movies.map((movie, i) => (
           <MovieCard
@@ -48,4 +47,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Upcoming;
