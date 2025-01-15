@@ -34,7 +34,7 @@ const MovieCard = ({
           </p>
           {/* ID */}
           <p className="text-gray-400 mb-2">
-            <span className="font-bold">ID:</span> {movieID}
+            <span className="font-bold">ID:</span> {movieID ?? "N/A"}
           </p>
 
           {/* Genres */}

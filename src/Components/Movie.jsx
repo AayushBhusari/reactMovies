@@ -92,7 +92,7 @@ const Movie = () => {
 
 // PropTypes
 Movie.propTypes = {
-  movieId: PropTypes.number.isRequired,
+  movieId: PropTypes.number,
 };
 
 export default Movie;
