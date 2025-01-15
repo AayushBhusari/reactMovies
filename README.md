@@ -1,7 +1,7 @@
 # React Movies App
 
 Visit the app here  
-👉 [React Movies App](#)
+👉 [React Movies App](https://aayushbhusari.github.io/reactMovies/)
 
 The **React Movies App** is a web-based application that allows users to browse movies, search for specific movies, and view movie details like title, overview, release date, genres, and more. The app is built using React and consumes data from The Movie Database (TMDb) API.
 
