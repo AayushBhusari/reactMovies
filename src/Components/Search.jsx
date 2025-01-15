@@ -6,6 +6,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 const Search = ({ onClose }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [isVisible, setIsVisible] = useState(true); // To control visibility with a smooth transition
   const navigate = useNavigate(); // Hook for navigation
 
   const handleSearchChange = async (e) => {
@@ -39,7 +40,11 @@ const Search = ({ onClose }) => {
   };
 
   return (
-    <div className="bg-gray-700 p-4">
+    <div
+      className={`bg-gray-700 p-4 transition-all duration-500 ease-in-out ${
+        isVisible ? "opacity-100" : "opacity-0 h-0 overflow-hidden"
+      }`}
+    >
       <div className="container mx-auto flex flex-col items-center">
         <input
           type="text"
@@ -73,7 +78,10 @@ const Search = ({ onClose }) => {
           )}
         </div>
         <button
-          onClick={onClose}
+          onClick={() => {
+            setIsVisible(false); // Hide the search bar with a smooth transition
+            onClose();
+          }}
           className="mt-2 text-gray-400 hover:text-white focus:outline-none"
         >
           <XMarkIcon className="h-6 w-6" />

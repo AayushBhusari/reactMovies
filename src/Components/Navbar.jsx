@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { Transition } from "react-transition-group"; // Import Transition
 import Search from "./Search"; // Import the Search component
 
 const Navbar = () => {
@@ -42,7 +43,22 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      {showSearch && <Search onClose={handleSearchToggle} />}
+
+      {/* Apply Transition to the Search component */}
+      <Transition in={showSearch} timeout={300} mountOnEnter unmountOnExit>
+        {(state) => (
+          <div
+            className={`transition-all duration-500 ease-in-out transform ${
+              state === "entered"
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            <Search onClose={handleSearchToggle} />
+          </div>
+        )}
+      </Transition>
+
       <Outlet />
     </>
   );
